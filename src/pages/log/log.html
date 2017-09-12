@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar color="logoblue">
+        <div class="app-logo-image"></div>
+        <div class="app-toolbar-heading">Acceleration Log</div>
+    </ion-toolbar> 
+</ion-header>
+
+<ion-content>
+    <button ion-button color='danger' text-center block round id="app-clearlog-button"
+            (click)="accelerationLogbook.deleteAccelerationLog()">Clear Logs</button>
+    <div *ngIf="!accelerationLogbook.resultsInLogCheck(); else elseBlock">
+        <h2>No log results available.</h2>
+    </div>
+    <ng-template #elseBlock>
+        <ion-list *ngFor= "let result of accelerationLogbook.getAccelerationLog()">
+            <ion-list-header>
+            Record Time: {{result.time}} seconds
+            </ion-list-header>
+            <ion-item>X Axis: {{result.x}}</ion-item>
+            <ion-item>Y Axis: {{result.y}}</ion-item>
+            <ion-item>Z Axis: {{result.z}}</ion-item>
+        </ion-list>
+    </ng-template>
+    
+    
+
+    
+</ion-content>

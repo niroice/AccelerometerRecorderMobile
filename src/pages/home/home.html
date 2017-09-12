@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar color="logoblue">
+        <div class="app-logo-image"></div>
+        <div class="app-toolbar-heading">Record Acceleration</div>
+    </ion-toolbar> 
+</ion-header>
+
+<ion-content padding>
+  <h3 text-center>Start Recording the Phones Accelerometer</h3>
+    
+    <div text-center style="margin-bottom: 2rem;">
+        
+        <button ion-button color="logoblue" round medium (click)="showPopoverSettings($event)">
+            <ion-icon name="settings"></ion-icon>
+        </button>
+        
+        <button ion-button color="danger" round large id="app-record-button" (click)="recordButtonPressed()">Rec</button>
+        
+        <button ion-button color="logoblue" round medium (click)="stopButtonPressed()" id="app-stop-button">
+            <ion-icon name="square"></ion-icon>
+        </button>
+        
+    </div>
+    <div class="app-currentresult-wrapper">Current Accelerometer Results:</div>
+    <div class="app-currentresult-wrapper" id="app-currenttime">Record Interval: {{accelerationLogbook.getLatestRecordTime()}} seconds</div>
+    <div class="app-currentresult-wrapper" id="app-currentx">X Axis: {{accelerationLogbook.getLatestRecordX()}}</div>
+    <div class="app-currentresult-wrapper" id="app-currenty">y Axis: {{accelerationLogbook.getLatestRecordY()}}</div>
+    <div class="app-currentresult-wrapper" id="app-currenty">Z Axis: {{accelerationLogbook.getLatestRecordZ()}}</div>
+</ion-content>
+
+

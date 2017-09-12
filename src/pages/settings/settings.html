@@ -1,0 +1,16 @@
+
+
+<ion-list>
+    <ion-list-header>
+     Record Interval (seconds):
+    <ion-badge text-right>{{accelerationLogBook.recordIntervalSeconds}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+     
+    <ion-range min="1" max="60"  steps="60" color="secondary" [(ngModel)] ="accelerationLogBook.recordIntervalSeconds">
+      <ion-label range-left>1</ion-label>
+      <ion-label range-right>60</ion-label>
+    </ion-range>
+  </ion-item>
+    
+</ion-list> 
